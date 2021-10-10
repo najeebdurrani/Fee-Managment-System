@@ -1,0 +1,36 @@
+{% extends "master_template.html" %}
+    {%block title%}
+    This is the Main Index Page
+    {%endblock%}
+  {%block body%}
+  <h2 style="text-align:center;">Welcome to Department of Computer Science</h2> <br>
+
+  <br><br>
+
+  <h3 style="border:1px solid black;background-color:skyblue; padding:8px;"> Search by Session</h3><br>
+
+  <form class="form-horizontal" action="/search" method="post" >
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="session">Session:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="session" name="session">
+          {% for a in sessions%}
+          <option value={{a[1]}}> {{a[1]}} </option>
+          {% endfor %}
+
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default"style="background-color:#e7e7e7;">Search</button>
+      </div>
+    </div>
+  </form>
+
+
+{%endblock%}
